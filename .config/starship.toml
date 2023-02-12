@@ -1,0 +1,22 @@
+# Use custom format:
+format = '$all'
+#format="$directory$git_branch$character"
+
+# Prompt symbols 
+[character]
+success_symbol = "[](#a6e3a1 bold)"
+error_symbol = "[](#f38ba8)"
+vicmd_symbol = "[](#f9e2af)"
+
+[directory]
+format = "[]($style)[(bg:#89b4fa fg:#49628a)$path](bg:#89b4fa fg:#49628a)[ ]($style)"
+style = "bg:#1a1b26 fg:#89b4fa"
+
+[git_branch]
+format = "[]($style)[[ ](bg:#89b4fa fg:#49628a bold)$branch](bg:#89b4fa fg:#4c4f69)[ ]($style)"
+style = "bg:#1a1b26 fg:#89b4fa"
+
+[git_status]
+format = '([]($style)[$all_status$ahead_behind](bg:#89b4fa fg:#49628a bold)[ ]($style))'
+style = "bg:#1a1b26 fg:#89b4fa"
+
