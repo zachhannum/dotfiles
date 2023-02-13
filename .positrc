@@ -4,7 +4,8 @@ export FUZZBUCKET_URL=https://wftmlggzd5.execute-api.us-west-2.amazonaws.com/pro
 
 # check if arm on mac
 if [[ $(uname -m) == "arm64" ]]; then
-    export DCYML_GRID=`pwd`/docker/grid/docker-compose.seleniarm.yml
+    export SELENIUM_VERSION=4.5.0-20221001
+    export DCYML_GRID=~/git/rstudio-ide-automation/docker/grid/docker-compose.seleniarm.yml
 fi
 
 # Fuzzbucket IDE opts
