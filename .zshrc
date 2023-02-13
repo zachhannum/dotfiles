@@ -97,6 +97,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle marlonrichert/zsh-autocomplete@main 
 
 zstyle ':autocomplete:tab:*' widget-style menu-select
+bindkey -M menuselect '\r' accept-line
 
 
 # Tell Antigen that you're done.
