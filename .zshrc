@@ -1,16 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export PATH=$PATH:/Applications/CMake.app/Contents/bin:~/.local/bin
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-eval "$(starship init zsh)"
-
+#ZSH_THEME="robbyrussell"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -66,25 +64,46 @@ eval "$(starship init zsh)"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+autoload -Uz compinit && compinit
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git)
-#source $ZSH/oh-my-zsh.sh
-
 source ~/.antigen.zsh
-
-antigen use oh-my-zsh
-
+eval "$(starship init zsh)"
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
+antigen bundle heroku
 antigen bundle pip
+antigen bundle lein
 antigen bundle command-not-found
-antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle autojump
+antigen bundle brew
+antigen bundle common-aliases
+antigen bundle compleat
+antigen bundle git-extras
+antigen bundle git-flow
+antigen bundle npm
+antigen bundle osx
+antigen bundle web-search
+antigen bundle z
+antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
+# antigen bundle zsh-completions
+# Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle marlonrichert/zsh-autocomplete@main 
 
+zstyle ':autocomplete:tab:*' widget-style menu-select
+
+
+# Tell Antigen that you're done.
 antigen apply
+# plugins=(git)
+# source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
@@ -111,26 +130,6 @@ antigen apply
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export PATH=$PATH:/usr/local/texlive/2022/bin/aarch64-linux
-
-source ~/.positrc
-export RSPRO_GIT_REPO="/home/parallels/git/rstudio-pro"
-export DENO_INSTALL="/home/parallels/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-export DENO_BIN_PATH="${DENO_INSTALL}/bin/deno"
-export DENO_BIN=$DENO_BIN_PATH
-export QUARTO_DENO=$DENO_BIN
-export RSTUDIO_DEPENDENCIES_QUARTO_DIR="/home/parallels/git/quarto-cli-package/dist"
-
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/parallels/.local/bin
-#export FUZZBUCKET_CREDENTIALS=~/.cache/fuzzbucket/credentials
-export FUZZBUCKET_URL=https://wftmlggzd5.execute-api.us-west-2.amazonaws.com/prod/
-alias fuzz="fuzzbucket-client"
-
-export SELENIUM_VERSION=4.5.0-20221001
-export DCYML_GRID=/home/parallels/git/rstudio-ide-automation/docker/grid/docker-compose.seleniarm.yml
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
