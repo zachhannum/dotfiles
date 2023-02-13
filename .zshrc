@@ -96,14 +96,15 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle marlonrichert/zsh-autocomplete@main 
 
-zstyle ':autocomplete:tab:*' widget-style menu-select
-bindkey -M menuselect '\r' accept-line
 
 
 # Tell Antigen that you're done.
 antigen apply
 # plugins=(git)
 # source $ZSH/oh-my-zsh.sh
+
+zstyle ':autocomplete:tab:*' widget-style menu-select
+bindkey -M menuselect '\r' accept-line
 
 
 # User configuration
