@@ -1,8 +1,11 @@
 export RSTUDIO_DISABLE_CRASHPAD=1
-export rswrepo="~/git/rstudio-pro"
-export rslog="/var/log/rstudio/rstudio-server"
-export rswinstall="/usr/lib/rstudio-server"
+alias fuzz="fuzzbucket-client"
+export FUZZBUCKET_URL=https://wftmlggzd5.execute-api.us-west-2.amazonaws.com/prod/
 
-alias cmrserver="(cd ${rswrepo}/build; cmake -GNinja .. -DRSTUDIO_TARGET=Server -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=${rswinstall};)"
-alias clrserver="(cd ${rswrepo}/build; ninja clean;)"
-alias brserver="(cd ${rswrepo}/build; sudo ninja install -j 10 -v;)"
+# check if arm on mac
+if [[ $(uname -m) == "arm64" ]]; then
+    export DCYML_GRID=`pwd`/docker/grid/docker-compose.seleniarm.yml
+fi
+
+export SSL_ENABLED=1
+
