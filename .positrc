@@ -12,6 +12,7 @@ fi
 export SSL_ENABLED=1
 export RSW_SSL=on
 export LAUNCHER_ENABLED=1
+export RERUNS=0
 
 # For pipenv
 export PATH=$PATH:/Users/zhannum/.pyenv/bin
