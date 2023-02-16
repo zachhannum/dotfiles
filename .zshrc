@@ -41,6 +41,11 @@ antigen apply
 zstyle ':autocomplete:tab:*' widget-style menu-select
 bindkey -M menuselect '\r' accept-line
 
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
 # If ~/.positrc exists, load it.
 if [[ -f ~/.positrc ]]; then
   source ~/.positrc
