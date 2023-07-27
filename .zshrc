@@ -4,6 +4,7 @@ export PATH=$PATH:/Applications/CMake.app/Contents/bin:~/.local/bin
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
+export LC_ALL="C.UTF-8"
 
 autoload -Uz compinit && compinit
 
@@ -44,7 +45,7 @@ bindkey -M menuselect '\r' accept-line
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
+setopt share_history
 
 # If ~/.positrc exists, load it.
 if [[ -f ~/.positrc ]]; then
@@ -55,3 +56,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH=$PATH:/Users/zhannum/.spicetify
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/zhannum/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
